@@ -15,14 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('sobrenome');
-            $table->integer('cpf');
+            $table->string('cpf', 11);
+            $table->float('primeira_nota')->nullable();
+            $table->float('segunda_nota')->nullable();
+            $table->float('terceira_nota')->nullable();
+            $table->float('quarta_nota')->nullable();
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+    
     public function down(): void
     {
         Schema::dropIfExists('usuarios');

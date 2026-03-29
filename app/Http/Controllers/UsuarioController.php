@@ -17,13 +17,17 @@ class UsuarioController extends Controller
     }
 
 
-    public function create(Request $request)
+    public function store(Request $request)
     {
         // campos considerados obrigatórios para recebimento de dados | inserir(post)
         $validated = $request->validate([
             'nome' => 'required|string',
             'sobrenome' => 'required|string',
-            'cpf' => 'required|numeric'
+            'cpf' => 'required|string',
+            'primeira_nota' => 'nullable|numeric',
+            'segunda_nota' => 'nullable|numeric',
+            'terceira_nota' => 'nullable|numeric',
+            'quarta_nota' => 'nullable|numeric'
         ]);
 
         $usuario = Usuario::create($validated);
@@ -36,7 +40,11 @@ class UsuarioController extends Controller
         $validated = $request->validate([
             'nome' => 'required|string',
             'sobrenome' => 'required|string',
-            'cpf' => 'required|numeric'
+            'cpf' => 'required|numeric',
+            'primeira_nota' => 'nullable|numeric',
+            'segunda_nota' => 'nullable|numeric',
+            'terceira_nota' => 'nullable|numeric',
+            'quarta_nota' => 'nullable|numeric'
         ]);
 
         $usuario->update($validated);

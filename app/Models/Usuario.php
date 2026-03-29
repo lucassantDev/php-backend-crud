@@ -9,7 +9,11 @@ class Usuario extends Model
     protected $fillable = [
         'nome',
         'sobrenome',
-        'cpf'
+        'cpf',
+        'primeira_nota',
+        'segunda_nota',
+        'terceira_nota',
+        'quarta_nota'
     ];
 }
 
