@@ -11,22 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('usuarios', function (Blueprint $table) {
+        Schema::create('administradores', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
             $table->string('sobrenome');
+            $table->string('e-mail');
             $table->string('cpf', 11);
-            $table->float('primeira_nota')->nullable();
-            $table->float('segunda_nota')->nullable();
-            $table->float('terceira_nota')->nullable();
-            $table->float('quarta_nota')->nullable();
             $table->timestamps();
         });
     }
 
-    
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('usuarios');
+        Schema::dropIfExists('administradores');
     }
 };
