@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Administradores extends Model
+{
+    protected $fillable = [
+        'nome',
+        'sobrenome',
+        'e-mail',
+        'cpf'
+    ];
+}
