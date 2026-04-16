@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('sobrenome');
-            $table->string('cpf', 11);
+            $table->string('cpf', 14)->unique();
             $table->float('primeira_nota')->nullable();
             $table->float('segunda_nota')->nullable();
             $table->float('terceira_nota')->nullable();
