@@ -22,7 +22,7 @@ class AdministradoresController extends Controller
             'nome' => 'required|string',
             'sobrenome' => 'required|string',
             'e-mail' => 'required|string',
-            'cpf' => 'required|string'
+            'cpf' => 'required|string|unique:administradores,cpf'
         ]);
 
         $administradores = Administradores::create($validated);

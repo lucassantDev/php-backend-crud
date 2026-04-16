@@ -23,7 +23,7 @@ class UsuarioController extends Controller
         $validated = $request->validate([
             'nome' => 'required|string',
             'sobrenome' => 'required|string',
-            'cpf' => 'required|string',
+            'cpf' => 'required|string|unique:usuarios,cpf',
             'primeira_nota' => 'nullable|numeric',
             'segunda_nota' => 'nullable|numeric',
             'terceira_nota' => 'nullable|numeric',
@@ -40,7 +40,7 @@ class UsuarioController extends Controller
         $validated = $request->validate([
             'nome' => 'required|string',
             'sobrenome' => 'required|string',
-            'cpf' => 'required|numeric',
+            'cpf' => 'required|numeric|unique:usuarios,cpf',
             'primeira_nota' => 'nullable|numeric',
             'segunda_nota' => 'nullable|numeric',
             'terceira_nota' => 'nullable|numeric',

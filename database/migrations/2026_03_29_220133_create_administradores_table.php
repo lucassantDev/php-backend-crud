@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nome');
             $table->string('sobrenome');
             $table->string('e-mail');
-            $table->string('cpf', 11);
+            $table->string('cpf', 14)->unique();
             $table->timestamps();
         });
     }
